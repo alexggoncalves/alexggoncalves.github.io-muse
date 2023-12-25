@@ -1,0 +1,19 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+:root {
+  margin: 3vw 3vw;
+  height: calc(100vh - 6vw);
+}
+
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.logo {
+  font-size: 3vw;
+  line-height: 1;
+}

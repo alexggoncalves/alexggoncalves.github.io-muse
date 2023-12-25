@@ -1,0 +1,15 @@
+.search-controls-container {
+    display: flex;
+}
+
+.search-controls-title {
+    margin: 0;
+}
+
+.search-control {
+    border: 1px solid white;
+    background-color: transparent;
+    height: 40px;
+    width: 25vw;
+    padding: 10px;
+}
