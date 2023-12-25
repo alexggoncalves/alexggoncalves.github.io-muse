@@ -5,10 +5,14 @@ import { useRef } from "react";
 
 import chevron from "../../assets/icons8-chevron-30.png";
 
+import { useContext, useState } from "react";
+import { ArtContext } from "../../contexts/ArtContext";
+
 const DropDown = ({ options, title, setChoice }) => {
     const optionsRef = useRef();
     const dropDownRef = useRef();
     const placeHolderRef = useRef();
+    const artContext = useContext(ArtContext);
 
     // capitalize first letter and remove text inside parentheses
     const cleanOptionName = (str) => {
@@ -29,6 +33,8 @@ const DropDown = ({ options, title, setChoice }) => {
     const selectOption = (event) => {
         placeHolderRef.current.textContent = event.target.textContent;
         setChoice(event.target.id);
+        if(event.target.id == "any") setChoice("");
+
     };
 
     return (
@@ -42,11 +48,20 @@ const DropDown = ({ options, title, setChoice }) => {
                 >
                     <div className="dropdown-placeholder">
                         <p className="placeholder" ref={placeHolderRef}>
-                            any
+                            Any
                         </p>
-                        <img src={chevron} alt="chevron" />
+                        <img className="chevron" src={chevron} alt="chevron" />
                     </div>
                     <div className="options hide" ref={optionsRef}>
+                        <div
+                            className="option"
+                            id={"any"}
+                            onClick={(event) => {
+                                selectOption(event);
+                            }}
+                        >
+                            Any
+                        </div>
                         {options?.map((option) => (
                             <div
                                 className="option"

@@ -1,9 +1,12 @@
+import { Suspense, lazy } from "react";
 import "./App.css";
-import ArtList from "./components/ArtList";
 import Header from "./components/Header";
 import SearchControls from "./components/SearchControls/SearchControls";
 
+const ArtList = lazy(() => import("./components/ArtList/ArtList"));
+
 import { ArtProvider } from "./contexts/ArtContext";
+import Loading from "./components/ArtList/Loading";
 
 function App() {
     return (
@@ -12,7 +15,9 @@ function App() {
             <main>
                 <span className="logo">MUSE</span>
                 <SearchControls></SearchControls>
-                <ArtList />
+                <Suspense fallback={<Loading />}>
+                    <ArtList />
+                </Suspense>
             </main>
         </ArtProvider>
     );

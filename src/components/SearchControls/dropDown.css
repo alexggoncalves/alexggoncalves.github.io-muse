@@ -6,8 +6,9 @@
     border: 1px solid white;
     background-color: transparent;
     height: 40px;
-    width: 25vw;
+    width: 20vw;
     padding: 10px;
+    margin-right: 10px;
 }
 
 .dropdown:hover {
@@ -15,9 +16,7 @@
 }
 
 .dropdown-active {
-    /* border-color: var(--colorAccent); */
-    /* border-bottom-left-radius: 0px !important;
-    border-bottom-right-radius: 0px !important; */
+    background-color: #FFFFFF20;
 }
 
 .dropdown-placeholder {
@@ -46,14 +45,18 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 16px;
+    padding: 12px;
 }
 
 .option:hover {
-    background-color: #FFFFFF20;
+    background-color:rgba(255, 255, 255, 0.1);
     cursor: pointer;
 }
 
 .hide {
     display: none;
+}
+
+.chevron {
+    width: 15px;
 }
