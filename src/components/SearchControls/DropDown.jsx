@@ -15,7 +15,7 @@ const DropDown = ({ options, title, setChoice }) => {
     const artContext = useContext(ArtContext);
 
     // capitalize first letter and remove text inside parentheses
-    const cleanOptionName = (str) => {
+    const parseOptionName = (str) => {
         let output = str.charAt(0).toUpperCase() + str.slice(1);
         const parethesesIndex = output.indexOf("(");
 
@@ -71,7 +71,7 @@ const DropDown = ({ options, title, setChoice }) => {
                                     selectOption(event);
                                 }}
                             >
-                                {cleanOptionName(option.key)}
+                                {parseOptionName(option.key)}
                             </div>
                         ))}
                     </div>

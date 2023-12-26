@@ -39,6 +39,7 @@
     overflow-y: scroll;
     background-color: rgba(73, 85, 82, 0.8);
     border: 1px solid white;
+    z-index: 10;
 }
 
 .options > div {

@@ -1,9 +1,76 @@
-.art-list {
-    margin-top: 30px;
+/* .art-list {
+    margin-top: 20px;
 }
 
 .art-image {
+    background-color: white;
+    display: inline;
+    max-width: 100%;
     height: 22vh;
+    width: fit-content;
     margin-right: 10px;
     margin-bottom: 10px;
+    cursor: url("./../../assets/icons8-hand-cursor.png"),auto;
+    line-height: 0;
+}
+ */
+.art-list {
+    margin-top: 10px;
+    line-height: 2;
+    -webkit-column-count: 3;
+    -webkit-column-gap: 10px;
+    -moz-column-count: 3;
+    -moz-column-gap: 10px;
+    column-count: 3;
+    column-gap: 10px;
+}
+
+.art-image {
+    cursor: pointer;
+    position: relative;
+    width: 100% !important;
+    height: auto !important;
+}
+
+.floating-caption {
+    line-height: 1.2;
+    position: absolute;
+    user-select: none;
+    background-color: rgba(73, 85, 82, 0.8);
+    border: 1px solid white;
+    max-width: 40vw;
+    padding: 5px 8px;
+    margin-right: 20px;
+    z-index: 10;
+}
+
+.bold {
+    font-weight: bold;
+}
+.page-navigator {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 10px;
+}
+.current-page {
+    border: 1px solid white;
+    padding: 5px 9px;
+    margin-right: 5px;
+    user-select: none;
+}
+
+.page-arrow {
+    width: 3vw;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.page-arrow:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.disabled:hover {
+    background-color: transparent;
 }
