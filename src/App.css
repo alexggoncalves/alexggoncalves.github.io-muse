@@ -55,7 +55,7 @@ body {
 
 @media only screen and (max-width: 600px){
   header{
-    height: 30vh;
+    height: 32vh;
   }
 
   .logo {

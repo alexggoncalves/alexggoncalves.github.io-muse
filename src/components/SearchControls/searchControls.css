@@ -182,6 +182,8 @@
     .search-bar {
         width: calc(94vw - 10px);
         position: relative;
+        -webkit-appearance: none;
+        appearance: none
     }
 
     .dropdown {
