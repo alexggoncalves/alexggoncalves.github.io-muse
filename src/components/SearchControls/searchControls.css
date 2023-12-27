@@ -180,10 +180,11 @@
     }
 
     .search-bar {
-        width: calc(94vw - 10px);
+        width: calc(94vw);
         position: relative;
         -webkit-appearance: none;
-        appearance: none
+        appearance: none;
+        margin-right: 0;
     }
 
     .dropdown {
