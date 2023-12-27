@@ -1,7 +1,7 @@
-.options-container{
+.options-container {
     display: flex;
     justify-content: space-between;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 .search-controls-container {
@@ -10,6 +10,7 @@
 
 .search-controls-title {
     margin: 0 0 5px 0;
+    user-select: none;
 }
 
 .search-bar {
@@ -19,36 +20,58 @@
     width: 25vw;
     padding: 10px;
     margin-right: 10px;
-    font-family: 'Lekton';
+    font-family: "Lekton";
     color: white;
+    
+}
+
+.search-controls-container>div:first-child{
+    position: relative;
+}
+
+.search-icon {
+    position: absolute;
+    height: 40px;
+    padding: 6px;
+    right: 10px;
+    top: calc(0);
+    border: 1px solid white;
+    cursor: pointer;
+}
+
+.search-bar:hover {
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .search-bar:focus-visible {
     outline: none;
-    background-color:rgba(255, 255, 255, 0.1);
-    
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
-.sort-options{
+.sort-options {
     font-size: 0.8rem;
     display: flex;
 }
 
-.sort-options>div {
+.sort-options > div {
     border: 1px solid white;
     height: 40px;
     padding: 10px 10px 10px 10px;
     margin-left: 10px;
     display: flex;
     flex-direction: row;
-    justify-content:space-between;
+    justify-content: space-between;
     align-items: center;
     width: 60px;
     cursor: pointer;
     user-select: none;
 }
 
-.sort-options>div:first-child{
+.sort-options > div:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sort-options > div:first-child {
     margin-left: 0;
     width: fit-content;
 }
@@ -58,7 +81,7 @@
 }
 
 .sort-active {
-    background-color:rgba(255, 255, 255, 0.1);;
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .invert {
@@ -67,4 +90,129 @@
 
 .sort-options span {
     height: 65%;
+}
+
+.dropdowns-container {
+    display: flex;
+}
+
+.dropdown {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid white;
+    background-color: transparent;
+    height: 40px;
+    width: 20vw;
+    padding: 10px;
+    margin-right: 10px;
+    user-select: none;
+}
+
+.dropdown:hover{
+    background-color: #ffffff20;
+}
+
+.dropdown:hover {
+    cursor: pointer;
+}
+
+.dropdown-active {
+    background-color: #ffffff20;
+}
+
+.dropdown-placeholder {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.options {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 300px;
+    width: calc(100% + 2px);
+    transform: translate(-1px, -2px);
+    overflow-y: scroll;
+    background-color: rgba(73, 85, 82, 0.8);
+    border: 1px solid white;
+    z-index: 10;
+}
+
+.options > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 12px;
+}
+
+.option:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+}
+
+.hide {
+    display: none;
+}
+
+.chevron {
+    width: 15px;
+}
+
+@media only screen and (max-width: 600px) {
+    .search-controls-container {
+        display: block;
+    }
+
+    .options-container {
+        display: block;
+    }
+
+    .dropdowns-container {
+        margin-top: 10px;
+    }
+
+    .search-bar {
+        width: calc(94vw - 10px);
+        position: relative;
+    }
+
+    .dropdown {
+        width: calc(50vw - 10px - 3vw);
+    }
+
+    .search-icon{
+        top: calc(50% - 8px);
+        right: 0
+    }
+
+    .sort-container {
+        margin: 10px 0 0 0;
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    .search-bar {
+        width: calc(40vw - 10px);
+        position: relative;
+    }
+    .dropdown {
+        width: calc(30vw - 10px - 3vw);
+    }
+
+    .options-container {
+        display: block;
+    }
+
+    .sort-container {
+        margin: 10px 0 0 0;
+    }
+
 }

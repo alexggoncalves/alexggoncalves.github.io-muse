@@ -1,10 +1,12 @@
 import "./searchControls.css";
 
 import { ArtContext } from "../../contexts/ArtContext";
-import { useContext} from "react";
+import { useContext, useEffect, useRef } from "react";
 
 import DropDown from "./dropDown";
 import SortOptions from "./SortOptions";
+import searchIcon from "./../../assets/icons8-search-150.png";
+import SearchInput from "./SearchInput";
 
 const SearchControls = () => {
     const artContext = useContext(ArtContext);
@@ -15,22 +17,21 @@ const SearchControls = () => {
     return (
         <div className="options-container">
             <div className="search-controls-container">
-                <div>
-                    <p className="search-controls-title">search</p>
-                    <input className="search-bar" placeholder="..."></input>
+                <SearchInput/>
+                <div className="dropdowns-container">
+                    <DropDown
+                        options={materials}
+                        title={"material"}
+                        setChoice={artContext.setMaterial}
+                    />
+                    <DropDown
+                        options={techniques}
+                        title={"technique"}
+                        setChoice={artContext.setTechnique}
+                    />
                 </div>
-                <DropDown
-                    options={materials}
-                    title={"material"}
-                    setChoice={artContext.setMaterial}
-                />
-                <DropDown
-                    options={techniques}
-                    title={"technique"}
-                    setChoice={artContext.setTechnique}
-                />
             </div>
-            <SortOptions/>
+            <SortOptions />
         </div>
     );
 };

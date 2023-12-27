@@ -1,15 +1,18 @@
-import { Suspense, useContext, useEffect, useState, useRef } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { ArtContext } from "../../contexts/ArtContext";
-import Loading from "./Loading";
 
 const ArtObject = ({ object }) => {
     const captionRef = useRef();
-    console.log(object);
-    const toggleCaptionVisibility = () => {
-        captionRef.current.classList.toggle("hide");
-    };
 
-    const parseCaption = (str) => {
+    function isTouchDevice() {
+        return (
+            "ontouchstart" in window ||
+            navigator.maxTouchPoints > 0 ||
+            navigator.msMaxTouchPoints > 0
+        );
+    }
+
+    const parseCaption = (str, material, technique) => {
         const commaIndex = str.indexOf(",");
 
         return (
@@ -18,6 +21,10 @@ const ArtObject = ({ object }) => {
                 <p>{str.substring(commaIndex + 2, str.length)}</p>
             </>
         );
+    };
+
+    const toggleCaptionVisibility = () => {
+        captionRef.current.classList.toggle("hide");
     };
 
     const moveCaption = (event) => {
@@ -31,27 +38,33 @@ const ArtObject = ({ object }) => {
 
     useEffect(() => {
         document.addEventListener("mousemove", moveCaption);
-
+        document.addEventListener("wheel", moveCaption);
         return () => {
             document.removeEventListener("mousemove", moveCaption);
+            document.removeEventListener("wheel", moveCaption);
         };
     }, []);
 
     return (
-        <>
-            
-            <a href={object.links.web} target="_blank" rel="noreferrer noopener">
+        <div className="art-object">
+            <a
+                href={object.links.web}
+                target="_blank"
+                rel="noreferrer noopener"
+            >
                 <img
                     className="art-image"
                     src={object.webImage.url}
+                    alt={object.title}
                     onMouseEnter={toggleCaptionVisibility}
                     onMouseLeave={toggleCaptionVisibility}
                 />
+                
             </a>
-            <div ref={captionRef} className="floating-caption hide">
-                {parseCaption(object.longTitle)}
+            <div ref={captionRef} className={`hide floating-caption`}>
+                    {parseCaption(object.longTitle)}
             </div>
-        </>
+        </div>
     );
 };
 
