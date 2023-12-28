@@ -32,7 +32,7 @@ const SortOptions = () => {
             <p className="search-controls-title">sort</p>
             <div className="sort-options">
                 <div
-                    className={order == "relevance" ? "sort-active" : undefined}
+                    className={order == "relevance" ? "sort-active" : "sort-innactive"}
                     onClick={toggleRelevanceOrder}
                 >
                     relevance
@@ -41,7 +41,7 @@ const SortOptions = () => {
                     className={
                         order == "chronologic" || order == "achronologic"
                             ? "sort-active"
-                            : undefined
+                            : "sort-innactive"
                     }
                     onClick={togglechronologicOrder}
                 >
@@ -52,7 +52,7 @@ const SortOptions = () => {
                     className={
                         order == "artist" || order == "artistdesc"
                             ? "sort-active"
-                            : undefined
+                            : "sort-innactive"
                     }
                     onClick={toggleAlphabeticalOrder}
                 >

@@ -102,7 +102,7 @@ body {
   background: rgba(255, 255, 255, 1);
 }
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 1024px){
   header{
     height: fit-content;
   }
@@ -110,6 +110,10 @@ body {
   .logo {
     font-size: 3rem;
     line-height: 1;
+  }
+
+  .about{
+    top:0;
   }
   
   .about>span{
@@ -142,8 +146,4 @@ body {
   .about:hover {
     background: transparent
   }
-}
-
-@media only screen and (min-width: 601px) and (max-width: 1024px) {
-
 }

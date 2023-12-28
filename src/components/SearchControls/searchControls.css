@@ -23,10 +23,9 @@
     margin-right: 10px;
     font-family: "Lekton";
     color: white;
-    
 }
 
-.search-controls-container>div:first-child{
+.search-controls-container > div:first-child {
     position: relative;
 }
 
@@ -110,7 +109,7 @@
     user-select: none;
 }
 
-.dropdown:hover{
+.dropdown:hover {
     background-color: #ffffff20;
 }
 
@@ -128,7 +127,6 @@
     justify-content: space-between;
     align-items: center;
 }
-
 
 .options {
     position: absolute;
@@ -185,21 +183,27 @@
         -webkit-appearance: none;
         appearance: none;
         margin-right: 0;
-        border-radius:0
+        border-radius: 0;
     }
 
     .dropdown {
         width: calc(50vw - 10px - 3vw);
     }
 
-    .search-icon{
+    .search-icon {
         top: calc(50% - 8px);
-        right: 0
+        right: 0;
     }
 
     .sort-container {
         margin: 10px 0 0 0;
     }
+
+    .sort-innactive {
+        background-color: transparent !important; 
+    }
+
+
 }
 
 @media only screen and (min-width: 701px) and (max-width: 1024px) {
@@ -218,6 +222,10 @@
 
     .sort-container {
         margin: 10px 0 0 0;
+    }
+    
+    .sort-innactive {
+        background-color: transparent !important; 
     }
 
 }
