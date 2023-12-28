@@ -14,6 +14,7 @@
 }
 
 .search-bar {
+    position: relative;
     border: 1px solid white;
     background-color: transparent;
     height: 40px;
@@ -34,7 +35,6 @@
     height: 40px;
     padding: 6px;
     right: 10px;
-    top: calc(0);
     border: 1px solid white;
     cursor: pointer;
 }
@@ -166,7 +166,7 @@
     width: 15px;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
     .search-controls-container {
         display: block;
     }
@@ -180,11 +180,12 @@
     }
 
     .search-bar {
-        width: calc(94vw);
+        width: calc(100%);
         position: relative;
         -webkit-appearance: none;
         appearance: none;
         margin-right: 0;
+        border-radius:0
     }
 
     .dropdown {
@@ -201,10 +202,11 @@
     }
 }
 
-@media only screen and (min-width: 601px) and (max-width: 1024px) {
+@media only screen and (min-width: 701px) and (max-width: 1024px) {
     .search-bar {
         width: calc(40vw - 10px);
         position: relative;
+        font-size: 16px;
     }
     .dropdown {
         width: calc(30vw - 10px - 3vw);

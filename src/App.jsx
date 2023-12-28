@@ -1,4 +1,5 @@
 import "./App.css";
+import About from "./components/About";
 import ArtList from "./components/ArtList/ArtList";
 import SearchControls from "./components/SearchControls/SearchControls";
 
@@ -7,12 +8,12 @@ import { ArtProvider } from "./contexts/ArtContext";
 function App() {
     return (
         <ArtProvider>
+            <header>
+                <span className="logo">MUSE</span>
+                <About />
+            </header>
             <main>
-                <header>
-                    <span className="logo">MUSE</span>
-                    <SearchControls></SearchControls>
-                </header>
-
+                <SearchControls></SearchControls>
                 <ArtList />
             </main>
         </ArtProvider>
