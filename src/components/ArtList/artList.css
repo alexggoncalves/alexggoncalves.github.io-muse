@@ -118,6 +118,11 @@
 
     .page-arrow {
         width: 10vw;
+        background-color: transparent !important;
+    }
+
+    .page-arrow:active{
+        background-color: rgba(255, 255, 255, 0.1);;
     }
 
     .art-object{
@@ -167,8 +172,12 @@
     .floating-caption.hide {
         display: block;
     }
-
     .page-arrow {
         width: 5vw;
+        background-color: transparent !important;
+    }
+
+    .page-arrow:active{
+        background-color: rgba(255, 255, 255, 0.1);;
     }
 }
