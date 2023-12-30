@@ -3,9 +3,6 @@ import { useRef } from "react";
 
 import chevron from "../../assets/icons8-chevron-30.png";
 
-import { useContext, useState } from "react";
-import { ArtContext } from "../../contexts/ArtContext";
-
 const DropDown = ({ options, title, setChoice }) => {
     const optionsRef = useRef();
     const dropDownRef = useRef();

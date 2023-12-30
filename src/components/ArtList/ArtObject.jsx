@@ -1,18 +1,9 @@
-import { useContext, useEffect, useRef } from "react";
-import { ArtContext } from "../../contexts/ArtContext";
+import { useEffect, useRef } from "react";
 
 const ArtObject = ({ object }) => {
     const captionRef = useRef();
 
-    function isTouchDevice() {
-        return (
-            "ontouchstart" in window ||
-            navigator.maxTouchPoints > 0 ||
-            navigator.msMaxTouchPoints > 0
-        );
-    }
-
-    const parseCaption = (str, material, technique) => {
+    const parseCaption = (str) => {
         const commaIndex = str.indexOf(",");
 
         return (
