@@ -10,7 +10,6 @@ const DropDown = ({ options, title, setChoice }) => {
     const optionsRef = useRef();
     const dropDownRef = useRef();
     const placeHolderRef = useRef();
-    const artContext = useContext(ArtContext);
 
     // capitalize first letter and remove text inside parentheses
     const parseOptionName = (str) => {

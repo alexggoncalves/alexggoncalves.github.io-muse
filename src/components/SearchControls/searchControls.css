@@ -36,8 +36,11 @@
     right: 10px;
     border: 1px solid white;
     cursor: pointer;
+    user-select: none;
 }
-
+.search-icon:hover{
+    background-color: rgba(255, 255, 255, 0.1);
+}
 .search-bar:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }

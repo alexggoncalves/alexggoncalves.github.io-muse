@@ -1,7 +1,7 @@
 import "./artList.css";
 
 import { v4 as uuidv4 } from "uuid";
-import { useContext,  } from "react";
+import { useContext } from "react";
 import { ArtContext } from "../../contexts/ArtContext";
 import Loading from "./Loading";
 import ArtObject from "./ArtObject";
@@ -17,16 +17,20 @@ const ArtList = () => {
     const loading = artContext.loading;
 
     return (
-        <>
-            {count != 0 ? <PageNavigator/> : undefined}
+        <>{count != 0 ?
+            <div className="page-results-container">
+                 <PageNavigator /> 
+                <div className="results-count"><b>{count}</b> results found!</div>    
+            </div> : undefined}
+
             <div className="art-list">
                 {loading ? <Loading /> : undefined}
-                {!loading && count == 0 ? <NoResults/> : undefined}
+                {!loading && count == 0 ? <NoResults /> : undefined}
                 {resultList?.map((object) => (
-                    <ArtObject key={uuidv4()} object={object}/>
+                    <ArtObject key={uuidv4()} object={object} />
                 ))}
             </div>
-            {!loading && count != 0 ? <PageNavigator/> : undefined}
+            {!loading && count != 0 ? <PageNavigator /> : undefined}
         </>
     );
 };

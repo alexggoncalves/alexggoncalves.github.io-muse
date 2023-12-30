@@ -1,11 +1,10 @@
 import "./searchControls.css";
 
 import { ArtContext } from "../../contexts/ArtContext";
-import { useContext, useEffect, useRef } from "react";
+import { useContext } from "react";
 
-import DropDown from "./dropDown";
+import DropDown from "./DropDown";
 import SortOptions from "./SortOptions";
-import searchIcon from "./../../assets/icons8-search-150.png";
 import SearchInput from "./SearchInput";
 
 const SearchControls = () => {
