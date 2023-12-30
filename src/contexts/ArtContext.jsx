@@ -1,11 +1,8 @@
 import { createContext, useEffect, useState } from "react";
 
 const initialValue = null;
-// const API_KEY = "QZkKctkz";
 
 const API_KEY = import.meta.env.VITE_API_KEY;
-
-console.log(API_KEY)
 
 export const ArtContext = createContext(initialValue);
 
